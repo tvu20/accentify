@@ -1,29 +1,26 @@
-import { useEffect, useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {
+  fetchTrackData,
+  fetchArtistData,
+  fetchRecentData,
+} from '../store/track-actions';
 
 const TestContent = () => {
+  const dispatch = useDispatch();
   const accessToken = useSelector(state => state.auth.accessToken);
 
-  const fetchData = useCallback(async () => {
-    const response = await fetch(
-      'https://api.spotify.com/v1/me/player/recently-played',
-      {
-        headers: {
-          Authorization: 'Bearer ' + accessToken,
-        },
-      }
-    );
-
-    const data = response.json();
-
-    console.log(data);
-  }, [accessToken]);
-
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    dispatch(fetchTrackData(accessToken));
+    // console.log('fetched song data');
+    dispatch(fetchArtistData(accessToken));
+    // console.log('fetched artist data');
+    dispatch(fetchRecentData(accessToken));
+    // console.log('fetched recent data');
+  }, [dispatch, accessToken]);
 
-  return <h1>HOME SCREEN</h1>;
+  return <h1>ACCENTIFY</h1>;
 };
 
 export default TestContent;

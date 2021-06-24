@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
+import Navigation from '../components/Navigation';
 import TestContent from '../components/TestContent';
 
 const Home = () => {
@@ -11,7 +12,12 @@ const Home = () => {
     history.replace('/login');
   }
 
-  return <TestContent />;
+  return (
+    <div>
+      <Navigation />
+      <TestContent />
+    </div>
+  );
 };
 
 export default Home;
