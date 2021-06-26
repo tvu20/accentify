@@ -17,7 +17,7 @@ export const fetchTrends = (accessToken, topTracks) => {
       );
 
       if (!response.ok) {
-        throw new Error('Fetching cart data failed.');
+        throw new Error('Fetching data failed.');
       }
 
       const data = await response.json();
@@ -70,6 +70,57 @@ export const fetchTrends = (accessToken, topTracks) => {
       );
     } catch {
       console.log('Error occured while fetching audio analysis data.');
+    }
+  };
+};
+
+// need to receive access token and top tracks as parameters
+export const fetchRecs = (accessToken, topTracks) => {
+  return async dispatch => {
+    const fetchData = async cur => {
+      const response = await fetch(
+        `https://api.spotify.com/v1/recommendations?limit=5&seed_tracks=${
+          topTracks[cur].id
+        }%2C${topTracks[cur + 1].id}%2C${topTracks[cur + 2].id}%2C${
+          topTracks[cur + 3].id
+        }%2C${topTracks[cur + 2].id}`,
+        {
+          headers: {
+            Authorization: 'Bearer ' + accessToken,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error('Fetching data failed.');
+      }
+
+      const data = await response.json();
+      return data;
+    };
+
+    const fetchingTracks = async () => {
+      let dataFetched = [];
+
+      let i = 0;
+
+      // 20 will be replaced.
+      while (i < 20) {
+        const fetched = await fetchData(i);
+        for (const track of fetched.tracks) {
+          dataFetched.push(track.id);
+        }
+        i += 5;
+      }
+
+      return dataFetched;
+    };
+
+    try {
+      const recs = await fetchingTracks();
+      dispatch(trendActions.setRecList({ rec_list: recs }));
+    } catch {
+      console.log('Error occured while fetching song recommendations.');
     }
   };
 };

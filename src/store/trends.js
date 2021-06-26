@@ -8,6 +8,7 @@ const initState = {
   speechiness: 0,
   tempo: 0,
   valence: 0,
+  rec_list: [],
 };
 
 const trendSlice = createSlice({
@@ -22,6 +23,9 @@ const trendSlice = createSlice({
       state.speechiness = action.payload.speechiness;
       state.tempo = action.payload.tempo;
       state.valence = action.payload.valence;
+    },
+    setRecList(state, action) {
+      state.rec_list = action.payload.rec_list;
     },
   },
 });
