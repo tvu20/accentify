@@ -108,7 +108,7 @@ export const fetchRecs = (accessToken, topTracks) => {
       while (i < 20) {
         const fetched = await fetchData(i);
         for (const track of fetched.tracks) {
-          dataFetched.push(track.id);
+          dataFetched.push(track);
         }
         i += 5;
       }
@@ -123,4 +123,19 @@ export const fetchRecs = (accessToken, topTracks) => {
       console.log('Error occured while fetching song recommendations.');
     }
   };
+};
+
+export const fetchTrackById = async (accessToken, id) => {
+  const response = await fetch(`https://api.spotify.com/v1/tracks/${id}`, {
+    headers: {
+      Authorization: 'Bearer ' + accessToken,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Fetching track info failed.');
+  }
+
+  const data = await response.json();
+  return data;
 };

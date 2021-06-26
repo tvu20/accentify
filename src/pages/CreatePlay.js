@@ -1,7 +1,9 @@
+import CreatePlaylist from '../components/CreatePlaylist';
+
 const Play = () => {
   return (
     <div>
-      <h1>PLAY</h1>
+      <CreatePlaylist />
     </div>
   );
 };

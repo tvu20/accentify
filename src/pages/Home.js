@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import Navigation from '../components/Navigation';
 import TestContent from '../components/TestContent';
 
 const Home = () => {
@@ -14,7 +13,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navigation />
       <TestContent />
     </div>
   );

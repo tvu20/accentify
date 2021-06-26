@@ -15,7 +15,7 @@ const DataTest = () => {
     dispatch(fetchRecs(accessToken, topTracks));
   }, [dispatch, accessToken, topTracks]);
 
-  return <div>DATA TESTING</div>;
+  return <div>TESTING DATA</div>;
 };
 
 export default DataTest;

@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
 import { authActions } from '../store/auth';
+import { fetchUserId } from '../store/auth-actions';
 
 const Callback = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Callback = () => {
     const accessToken = urlParts[urlParts.length - 1];
     dispatch(authActions.setAccessToken(accessToken));
     dispatch(authActions.setIsLoggedIn());
+    dispatch(fetchUserId(accessToken));
 
     console.log('login success');
 
