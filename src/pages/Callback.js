@@ -25,7 +25,7 @@ const Callback = () => {
 
     console.log('login success');
 
-    history.replace('/home');
+    history.replace('/top-tracks');
   };
 
   handleAccess();

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { useCallback } from 'react';
+import { useHistory } from 'react-router';
 
 import Navigation from './Navigation';
 
@@ -14,6 +14,12 @@ import {
 const DataFetcher = props => {
   const dispatch = useDispatch();
   const accessToken = useSelector(state => state.auth.accessToken);
+  const history = useHistory();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+
+  if (!isLoggedIn) {
+    history.replace('/login');
+  }
 
   useEffect(() => {
     // console.log(' in a route!');

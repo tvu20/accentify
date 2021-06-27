@@ -1,10 +1,8 @@
 import './App.css';
 
-import { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 
 import Callback from './pages/Callback';
-import Home from './pages/Home';
 import Login from './pages/Login';
 import Tracks from './pages/Tracks';
 import Artists from './pages/Artists';
@@ -26,9 +24,8 @@ function App() {
 
         <Route path='/callback' component={Callback} />
         <DataFetcher>
-          <Route path='/home' component={Home} />
-          <Route path='/tracks' component={Tracks} />
-          <Route path='/artists' component={Artists} />
+          <Route path='/top-tracks' component={Tracks} />
+          <Route path='/top-artists' component={Artists} />
           <Route path='/recently-played' component={Recents} />
           <Route path='/trends' component={Trends} />
           <Route path='/create' component={CreatePlay} />

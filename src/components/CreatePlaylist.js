@@ -28,10 +28,7 @@ const CreatePlaylist = () => {
       for (const song of recs) {
         songUris += song.uri;
         songUris += ',';
-        // populatePlaylist(accessToken, playlistId, song.uri);
       }
-
-      //   console.log(songUris);
 
       populatePlaylist(accessToken, playlistId, songUris);
     });
