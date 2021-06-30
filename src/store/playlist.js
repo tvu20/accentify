@@ -24,6 +24,10 @@ const playlistSlice = createSlice({
         state.tracklist = newPlaylist;
       }
     },
+    clearPlaylist(state, action) {
+      state.tracklist = [];
+      state.count = 0;
+    },
   },
 });
 

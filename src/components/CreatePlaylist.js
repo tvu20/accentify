@@ -6,13 +6,12 @@ import { createPlaylist, populatePlaylist } from '../store/playlist-actions';
 const CreatePlaylist = () => {
   const accessToken = useSelector(state => state.auth.accessToken);
   const userId = useSelector(state => state.auth.userId);
-  const recs = useSelector(state => state.trends.rec_list);
+  const playlist = useSelector(state => state.playlist.tracklist);
+  // const recs = useSelector(state => state.trends.rec_list);
 
   const createPlaylistHandler = () => {
     let playlistId = '';
     let songUris = '';
-
-    console.log(recs);
 
     // console.log(userId);
     createPlaylist(accessToken, userId).then(response => {
@@ -20,12 +19,12 @@ const CreatePlaylist = () => {
       console.log(playlistId);
 
       // to handle this error later
-      if (recs.length === 0) {
+      if (playlist.length === 0) {
         console.log('there are no songs!');
         return;
       }
 
-      for (const song of recs) {
+      for (const song of playlist) {
         songUris += song.uri;
         songUris += ',';
       }
