@@ -9,7 +9,7 @@ import Tracks from './pages/Tracks';
 import Artists from './pages/Artists';
 import Recents from './pages/Recents';
 import Trends from './pages/Trends';
-import CreatePlay from './pages/CreatePlay';
+import CreatePlay from './pages/Create/CreatePlay';
 
 import DataFetcher from './components/DataFetcher';
 

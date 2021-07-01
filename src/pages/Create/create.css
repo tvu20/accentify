@@ -1,0 +1,35 @@
+.create__container {
+  min-height: 31vh;
+  align-items: center;
+}
+
+h2.create-empty {
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 0;
+  margin-top: 70px;
+}
+
+h3.create-empty {
+  color: #a5cdcf;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0;
+}
+
+.create__button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.create__button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create__button i {
+  margin-left: 10px;
+  font-size: 20px;
+}

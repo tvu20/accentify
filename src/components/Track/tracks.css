@@ -29,6 +29,7 @@
 
 .track-item__left {
   display: flex;
+  cursor: pointer;
 }
 
 .track-item__meta {
@@ -70,7 +71,7 @@
 
 .track-item__right h4 {
   color: #68d5dc;
-  font-size: 40px;
+  /* font-size: 40px; */
   margin: 0;
   cursor: pointer;
 }

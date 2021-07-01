@@ -10,15 +10,23 @@ const TrackItem = props => {
     window.location.href = track.external_urls.spotify;
   };
 
-  const onAddHandler = () => {
+  const onAddHandler = event => {
     onClick(track);
   };
 
   const duration = calcDuration(track.duration_ms);
 
+  const icon = props.remove ? (
+    <h4 style={{ fontSize: '25px' }}>
+      <i className='fa fa-trash'></i>
+    </h4>
+  ) : (
+    <h4 style={{ fontSize: '40px' }}>+</h4>
+  );
+
   return (
-    <div className='track-item' onClick={onClickHandler}>
-      <div className='track-item__left'>
+    <div className='track-item'>
+      <div className='track-item__left' onClick={onClickHandler}>
         <img
           className='track-item__image'
           src={track.album.images[0].url}
@@ -29,11 +37,11 @@ const TrackItem = props => {
           <p>{track.artists[0].name}</p>
         </section>
       </div>
-      <div className='track-item__right'>
+      <div className='track-item__right' onClick={onAddHandler}>
         <p>
           {duration[0]}:{duration[1] < 9 ? `0${duration[1]}` : duration[1]}
         </p>
-        <h4 onClick={onAddHandler}>+</h4>
+        {icon}
       </div>
     </div>
   );
