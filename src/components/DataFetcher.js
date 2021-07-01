@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router';
 
-import Navigation from './Navigation';
+import Navigation from './Navigation/Navigation';
 
 import {
   fetchTrackData,

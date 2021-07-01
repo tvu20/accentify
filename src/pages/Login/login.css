@@ -14,8 +14,8 @@
 }
 
 .login__header-text {
-  padding-top: 70px;
-  padding-left: 70px;
+  padding-top: 100px;
+  padding-left: 90px;
   text-align: left;
 }
 
@@ -24,6 +24,7 @@ h1.login {
   font-weight: 700;
   font-size: 60px;
   margin: 0;
+  margin-bottom: 15px;
 }
 
 h2.login {
@@ -31,6 +32,7 @@ h2.login {
   font-weight: 600;
   font-size: 26px;
   margin: 0;
+  margin-bottom: 50px;
 }
 
 .login__btn {
@@ -50,7 +52,7 @@ h2.login {
 }
 
 .login__account {
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .login.fa-github {
@@ -60,7 +62,7 @@ h2.login {
 
 .login__footer {
   padding-bottom: 50px;
-  padding-left: 70px;
+  padding-left: 90px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

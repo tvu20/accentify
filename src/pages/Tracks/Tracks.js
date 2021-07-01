@@ -1,8 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import Tracklist from '../components/Track/Tracklist';
+import HeaderOne from '../../components/UI/HeaderOne';
+import Tracklist from '../../components/Track/Tracklist';
 
-import { playlistActions } from '../store/playlist';
+import { playlistActions } from '../../store/playlist';
+
+const DESC =
+  'Relive your favorite tunes from your entire Spotify history, or that one song you found six months ago that you just can’t get out of your head.';
 
 const Tracks = () => {
   const dispatch = useDispatch();
@@ -19,8 +23,9 @@ const Tracks = () => {
   };
 
   return (
-    <div>
-      <h1>TRACKS</h1>
+    <div className='page'>
+      <HeaderOne title='Top Tracks' description={DESC} />
+      {/* <h1>TRACKS</h1> */}
       <Tracklist tracklist={topTracks} onClick={addToPlaylist} />
       <button onClick={addAllToPlaylist}>Add all to playlist</button>
     </div>
