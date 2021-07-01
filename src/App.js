@@ -2,8 +2,9 @@ import './App.css';
 
 import { Route, Switch, Redirect } from 'react-router';
 
+import About from './pages/About/About';
 import Callback from './pages/Callback';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Tracks from './pages/Tracks';
 import Artists from './pages/Artists';
 import Recents from './pages/Recents';
@@ -21,6 +22,7 @@ function App() {
         </Route>
 
         <Route path='/login' component={Login} />
+        <Route path='/about' component={About} />
 
         <Route path='/callback' component={Callback} />
         <DataFetcher>

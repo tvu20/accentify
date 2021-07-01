@@ -1,0 +1,73 @@
+.login__container {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1),
+      rgba(24, 24, 26, 1)
+    ),
+    url('../../assets/banner.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.login__header-text {
+  padding-top: 70px;
+  padding-left: 70px;
+  text-align: left;
+}
+
+h1.login {
+  color: white;
+  font-weight: 700;
+  font-size: 60px;
+  margin: 0;
+}
+
+h2.login {
+  color: #fffbda;
+  font-weight: 600;
+  font-size: 26px;
+  margin: 0;
+}
+
+.login__btn {
+  margin-top: 30px;
+}
+
+.login.fa-spotify {
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.login__account,
+.login__account a {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login__account {
+  margin-left: 40px;
+}
+
+.login.fa-github {
+  font-size: 28px;
+  color: white;
+}
+
+.login__footer {
+  padding-bottom: 50px;
+  padding-left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.login__about-link {
+  color: #cefcff;
+  font-weight: 700;
+  margin-top: 7px;
+}

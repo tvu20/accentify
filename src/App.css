@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
 }
 
 .App-logo {
@@ -35,4 +37,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.fullcover {
+  width: 100vw;
+  height: 100vh;
+}
+
+.fullpage {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  display: flex;
+  background-image: linear-gradient(to bottom, #bcfbff, #68d5dc);
+  border: none;
+  padding: 10px 30px;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #24282e;
 }
