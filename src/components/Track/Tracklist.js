@@ -1,5 +1,4 @@
 import TrackItem from './TrackItem';
-import TrackRecentItem from './TrackRecentItem';
 
 import './tracks.css';
 
@@ -9,7 +8,7 @@ const Tracklist = props => {
   const renderTracks = () => {
     if (recent) {
       return tracklist.map((track, index) => {
-        return <TrackRecentItem key={index} track={track} onClick={onClick} />;
+        return <TrackItem key={index} track={track.track} onClick={onClick} />;
       });
     } else {
       return tracklist.map((track, index) => {

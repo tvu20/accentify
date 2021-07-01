@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router';
 import About from './pages/About/About';
 import Callback from './pages/Callback';
 import Login from './pages/Login/Login';
-import Tracks from './pages/Tracks/Tracks';
+import Tracks from './pages/Tracks';
 import Artists from './pages/Artists';
 import Recents from './pages/Recents';
 import Trends from './pages/Trends';

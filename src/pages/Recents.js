@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Tracklist from '../components/Track/Tracklist';
 
+import Header from '../components/UI/Header';
+
 import { playlistActions } from '../store/playlist';
 
 const Recents = () => {
@@ -19,10 +21,20 @@ const Recents = () => {
   };
 
   return (
-    <div>
-      <h1>RECENTS</h1>
+    <div className='page'>
+      {/* <h1>RECENTS</h1> */}
+      <Header
+        title='Recently Played'
+        image='recents'
+        description=''
+        showTimes={false}
+        showButton={true}
+        onButtonClick={addAllToPlaylist}
+        buttonText='Add all to playlist'
+      />
+
       <Tracklist tracklist={recents} onClick={addToPlaylist} recent={true} />
-      <button onClick={addAllToPlaylist}>Add all to playlist</button>
+      {/* <button onClick={addAllToPlaylist}>Add all to playlist</button> */}
     </div>
   );
 };

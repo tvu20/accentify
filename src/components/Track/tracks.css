@@ -1,10 +1,76 @@
 .tracks__container {
   display: flex;
   flex-direction: column;
-  background-color: gray;
+  padding: 0 70px 50px;
+  /* background-color: gray; */
 }
 
 .track-item {
-  border: 1px solid black;
-  padding: 30px;
+  background-color: black;
+  /* border: 1px solid black; */
+  padding: 10px;
+  /* cursor: pointer; */
+  border-radius: 10px;
+  margin-bottom: 17px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.track-item__image {
+  width: 84px;
+  height: 84px;
+  border-radius: 10px;
+}
+
+.track-item:hover {
+  background-color: #133133;
+}
+
+.track-item__left {
+  display: flex;
+}
+
+.track-item__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.track-item__meta h3,
+.track-item__meta p {
+  margin: 0;
+}
+
+.track-item__meta h3 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.track-item__meta p {
+  color: #cefcff;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.track-item__right {
+  display: flex;
+  align-items: center;
+}
+
+.track-item__right p {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  margin-right: 15px;
+}
+
+.track-item__right h4 {
+  color: #68d5dc;
+  font-size: 40px;
+  margin: 0;
+  cursor: pointer;
 }
