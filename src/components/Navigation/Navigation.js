@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+
+import { useSelector } from 'react-redux';
 import icons from '../../assets/icons';
 
 import './nav.css';
@@ -5,6 +8,28 @@ import './nav.css';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
+  // new
+  const [badgeHighlighted, setBadgeHighlight] = useState(false);
+
+  const numSongs = useSelector(state => state.playlist.count);
+
+  const badgeClasses = `nav__create ${badgeHighlighted ? 'bump' : ''}`;
+
+  useEffect(() => {
+    if (numSongs === 0) {
+      return;
+    }
+    setBadgeHighlight(true);
+
+    const timer = setTimeout(() => {
+      setBadgeHighlight(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [numSongs]);
+
   return (
     <div className='nav__container'>
       {/* <Link to='/home'>Home page</Link> */}
@@ -20,9 +45,16 @@ const Navigation = () => {
       <Link className='nav__icon nav__trends' to='/trends'>
         <img src={icons.trends} alt='trends' />
       </Link>
-      <Link className='nav__icon nav__create' to='/create'>
+      <Link className={badgeClasses} to='/create'>
         <img src={icons.create} alt='create' />
+        {numSongs > 0 && (
+          <div className='badge'>{numSongs > 99 ? '99+' : numSongs}</div>
+        )}
       </Link>
+      {/* <Link className='nav__icon nav__create' to='/create'>
+        {renderBadge()}
+        <img src={icons.create} alt='create' />
+      </Link> */}
     </div>
   );
 };

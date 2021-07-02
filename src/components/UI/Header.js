@@ -48,7 +48,7 @@ const Header = props => {
       <div className='header-one'>
         <div className='header-one__left'>
           <h1 className='header__title'>{props.title}</h1>
-          {props.description != '' && (
+          {props.description !== '' && (
             <p className='header__desc'>{props.description}</p>
           )}
         </div>

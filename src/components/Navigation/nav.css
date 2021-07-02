@@ -10,10 +10,55 @@
   padding-top: 60px;
 }
 
+.nav__container a {
+  text-decoration: none;
+}
+
 .nav__icon {
   padding-bottom: 35px;
 }
 
 .nav__icon img {
-  width: 35px;
+  width: 40px;
+}
+
+.badge {
+  position: relative;
+  z-index: 10;
+  background-color: #68d5dc;
+  color: #1d2228;
+  border: none;
+  border-radius: 7.5px;
+  margin-left: 42px;
+  margin-top: -25px;
+  padding: 2px 1px;
+  width: 22px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.badge p {
+  color: white;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

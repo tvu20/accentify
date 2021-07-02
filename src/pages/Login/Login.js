@@ -25,7 +25,7 @@ const Login = () => {
         <h2 className='login'>A new Spotify experience, tuned just for you.</h2>
         <button className='btn login__btn' onClick={loginHandler}>
           Log in with Spotify
-          <i class='fa fa-spotify login'></i>
+          <i className='fa fa-spotify login'></i>
         </button>
         <p className='login__account'>
           No Spotify account?{' '}
@@ -34,7 +34,7 @@ const Login = () => {
       </div>
       <footer className='login__footer'>
         <a href='https://github.com/tvu20/accentify'>
-          <i class='fa fa-github login'></i>
+          <i className='fa fa-github login'></i>
         </a>
         <Link to='/about' className='login__about-link'>
           What is Accentify?
