@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import TrackItem from './TrackItem';
 
 import './tracks.css';
@@ -28,7 +29,14 @@ const Tracklist = props => {
     }
   };
 
-  return <div className='tracks__container'>{renderTracks()}</div>;
+  return (
+    <Fragment>
+      {tracklist.length === 0 && <div className='tracks__container-empty' />}
+      {tracklist.length > 0 && (
+        <div className='tracks__container'>{renderTracks()}</div>
+      )}
+    </Fragment>
+  );
 };
 
 export default Tracklist;

@@ -7,6 +7,11 @@ import './header.css';
 const Header = props => {
   const [timePeriod, setTimePeriod] = useState(0);
 
+  const timePeriodHandler = (event, id) => {
+    props.setTime(id);
+    setTimePeriod(id);
+  };
+
   const imageUrl = () => {
     if (props.image === 'tracks') {
       return banners.tracks;
@@ -58,19 +63,19 @@ const Header = props => {
       {props.showTimes && (
         <div className='header__select-container'>
           <div
-            onClick={() => setTimePeriod(0)}
+            onClick={e => timePeriodHandler(e, 0)}
             className={`header__selector ${timePeriod === 0 ? 'active' : ''}`}
           >
             ALL TIME
           </div>
           <div
-            onClick={() => setTimePeriod(1)}
+            onClick={e => timePeriodHandler(e, 1)}
             className={`header__selector ${timePeriod === 1 ? 'active' : ''}`}
           >
             LAST SIX MONTHS
           </div>
           <div
-            onClick={() => setTimePeriod(2)}
+            onClick={e => timePeriodHandler(e, 2)}
             className={`header__selector ${timePeriod === 2 ? 'active' : ''}`}
           >
             LAST MONTH

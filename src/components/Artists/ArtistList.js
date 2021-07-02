@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import ArtistItem from './ArtistItem';
 
 import '../Track/tracks.css';
@@ -11,7 +12,14 @@ const ArtistList = props => {
     });
   };
 
-  return <div className='artist__container'>{renderArtists()}</div>;
+  return (
+    <Fragment>
+      {artistList.length === 0 && <div className='tracks__container-empty' />}
+      {artistList.length > 0 && (
+        <div className='artist__container'>{renderArtists()}</div>
+      )}
+    </Fragment>
+  );
 };
 
 export default ArtistList;

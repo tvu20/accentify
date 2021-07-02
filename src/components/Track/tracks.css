@@ -5,6 +5,10 @@
   /* background-color: gray; */
 }
 
+.tracks__container-empty {
+  height: 35vh;
+}
+
 .track-item {
   background-color: black;
   /* border: 1px solid black; */

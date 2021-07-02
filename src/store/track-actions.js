@@ -3,9 +3,9 @@ import { trackActions } from './tracks';
 // need to receive access token as a payload
 export const fetchTrackData = accessToken => {
   return async dispatch => {
-    const fetchData = async () => {
+    const fetchData = async timePeriod => {
       const response = await fetch(
-        'https://api.spotify.com/v1/me/top/tracks?time_range=long_term',
+        `https://api.spotify.com/v1/me/top/tracks?time_range=${timePeriod}`,
         {
           headers: {
             Authorization: 'Bearer ' + accessToken,
@@ -23,10 +23,14 @@ export const fetchTrackData = accessToken => {
     };
 
     try {
-      const trackData = await fetchData();
+      const topAll = await fetchData('long_term');
+      const top6 = await fetchData('medium_term');
+      const topM = await fetchData('short_term');
       dispatch(
         trackActions.setTracks({
-          items: trackData.items || [],
+          topAll: topAll.items || [],
+          top6: top6.items || [],
+          topM: topM.items || [],
         })
       );
     } catch {
@@ -38,9 +42,9 @@ export const fetchTrackData = accessToken => {
 // need to receive access token as a payload
 export const fetchArtistData = accessToken => {
   return async dispatch => {
-    const fetchData = async () => {
+    const fetchData = async timePeriod => {
       const response = await fetch(
-        'https://api.spotify.com/v1/me/top/artists?time_range=long_term',
+        `https://api.spotify.com/v1/me/top/artists?time_range=${timePeriod}`,
         {
           headers: {
             Authorization: 'Bearer ' + accessToken,
@@ -58,10 +62,14 @@ export const fetchArtistData = accessToken => {
     };
 
     try {
-      const artistData = await fetchData();
+      const topAll = await fetchData('long_term');
+      const top6 = await fetchData('medium_term');
+      const topM = await fetchData('short_term');
       dispatch(
         trackActions.setArtists({
-          items: artistData.items || [],
+          topAll: topAll.items || [],
+          top6: top6.items || [],
+          topM: topM.items || [],
         })
       );
     } catch {
