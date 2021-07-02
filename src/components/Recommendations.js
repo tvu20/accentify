@@ -4,23 +4,13 @@ import Tracklist from './Track/Tracklist';
 
 import { playlistActions } from '../store/playlist';
 
-const DataTest = () => {
+const Recommendations = props => {
   const dispatch = useDispatch();
   const trends = useSelector(state => state.trends);
 
   const addToPlaylist = track => {
     dispatch(playlistActions.addTrack(track));
   };
-
-  // const renderRecs = () => {
-  //   return (
-  //     <ul>
-  //       {trends.rec_list.map((track, index) => {
-  //         return <li key={index}>{track.name}</li>;
-  //       })}
-  //     </ul>
-  //   );
-  // };
 
   const addAllToPlaylist = () => {
     for (const song of trends.rec_list) {
@@ -30,12 +20,18 @@ const DataTest = () => {
 
   return (
     <div>
-      <h1>TESTING DATA</h1>
+      <div className='attribute-recs__header'>
+        <h2 className='attribute__title'>Recommendations</h2>
+        <button className='btn' onClick={addAllToPlaylist}>
+          Add all to playlist
+        </button>
+      </div>
       <Tracklist tracklist={trends.rec_list} onClick={addToPlaylist} />
-      {/* {renderRecs()} */}
-      <button onClick={addAllToPlaylist}>Add all to playlist</button>
+      {/* <button className='btn' onClick={props.refresh}>
+        Refresh recommendations
+      </button> */}
     </div>
   );
 };
 
-export default DataTest;
+export default Recommendations;

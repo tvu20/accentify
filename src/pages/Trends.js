@@ -5,7 +5,7 @@ import { fetchTrends, fetchRecs } from '../store/trend-actions';
 
 import Header from '../components/UI/Header';
 import Attributes from '../components/Trends/Attributes';
-import DataTest from '../components/DataTest';
+import Recommendations from '../components/Recommendations';
 
 let generated = false;
 
@@ -21,10 +21,14 @@ const Trends = () => {
     if (!generated) {
       console.log('getting recs');
       dispatch(fetchTrends(accessToken, topTracks));
-      // dispatch(fetchRecs(accessToken, topTracks));
+      dispatch(fetchRecs(accessToken, topTracks));
       generated = true;
     }
   }, [dispatch, accessToken, topTracks]);
+
+  const refreshRecsHandler = () => {
+    dispatch(fetchRecs(accessToken, topTracks));
+  };
 
   return (
     <div className='page'>
@@ -37,7 +41,7 @@ const Trends = () => {
       />
       <Attributes />
 
-      {/* <DataTest /> */}
+      <Recommendations refresh={refreshRecsHandler} />
     </div>
   );
 };

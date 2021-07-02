@@ -44,3 +44,10 @@
   text-align: left;
   margin-bottom: 20px;
 }
+
+.attribute-recs__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 70px;
+}
