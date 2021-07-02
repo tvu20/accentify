@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchTrends, fetchRecs } from '../store/trend-actions';
 
 import Header from '../components/UI/Header';
+import Attributes from '../components/Trends/Attributes';
 import DataTest from '../components/DataTest';
 
 let generated = false;
@@ -34,7 +35,9 @@ const Trends = () => {
         showTimes={false}
         showButton={false}
       />
-      <DataTest />
+      <Attributes />
+
+      {/* <DataTest /> */}
     </div>
   );
 };
