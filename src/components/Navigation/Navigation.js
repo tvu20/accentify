@@ -57,8 +57,8 @@ const Navigation = () => {
         <img src={icons.create} alt='create' />
       </Link> */}
       </div>
-      <Link className='nav__icon nav__trends' to='/banner'>
-        <img src={icons.trends} alt='trends' />
+      <Link className='nav__icon' to='/banner'>
+        <img src={icons.logo} alt='logo' />
       </Link>
     </div>
   );

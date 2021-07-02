@@ -4,6 +4,7 @@ import Recent from './recent.png';
 import Tracks from './tracks.png';
 import Create from './create.png';
 import Trash from './trash.png';
+import Logo from './logo.png';
 
 const icons = {
   tracks: Tracks,
@@ -12,6 +13,7 @@ const icons = {
   trends: Trends,
   create: Create,
   trash: Trash,
+  logo: Logo,
 };
 
 export default icons;
