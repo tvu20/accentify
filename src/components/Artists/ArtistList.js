@@ -11,7 +11,7 @@ const ArtistList = props => {
     });
   };
 
-  return <div className='tracks__container'>{renderArtists()}</div>;
+  return <div className='artist__container'>{renderArtists()}</div>;
 };
 
 export default ArtistList;

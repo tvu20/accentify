@@ -7,7 +7,7 @@ const TrackItem = props => {
   };
 
   const onClickHandler = () => {
-    window.location.href = track.external_urls.spotify;
+    window.open(track.external_urls.spotify, '_blank');
   };
 
   const onAddHandler = event => {
