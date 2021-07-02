@@ -1,8 +1,14 @@
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import './about.css';
 
 const About = () => {
+  const history = useHistory();
+
+  const returnHandler = () => {
+    history.goBack();
+  };
+
   return (
     <div className='about__container fullpage'>
       <h1 className='about'>Accentify</h1>
@@ -30,8 +36,8 @@ const About = () => {
         </p>
       </div>
       <div className='about__return-button'>
-        <button class='btn '>
-          <Link to='/login'>Return to Login</Link>
+        <button class='btn ' onClick={returnHandler}>
+          Return
         </button>
       </div>
     </div>

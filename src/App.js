@@ -10,6 +10,7 @@ import Artists from './pages/Artists';
 import Recents from './pages/Recents';
 import Trends from './pages/Trends';
 import CreatePlay from './pages/Create/CreatePlay';
+import Banner from './pages/Login/Banner';
 
 import DataFetcher from './components/DataFetcher';
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='/recently-played' component={Recents} />
           <Route path='/trends' component={Trends} />
           <Route path='/create' component={CreatePlay} />
+          <Route path='/banner' component={Banner} />
         </DataFetcher>
       </Switch>
     </div>

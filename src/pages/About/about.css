@@ -1,5 +1,5 @@
 .about__container {
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
   color: white;
   font-size: 18px;
@@ -34,5 +34,5 @@ h5.about {
 .about__return-button {
   display: flex;
   justify-content: center;
-  padding-bottom: 70px;
+  padding-bottom: 90px;
 }
