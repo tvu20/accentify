@@ -15,7 +15,7 @@ const DESC =
 
 const Play = () => {
   const dispatch = useDispatch();
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [playlistData, setPlaylistData] = useState();
 
   const accessToken = useSelector(state => state.auth.accessToken);
@@ -34,17 +34,17 @@ const Play = () => {
     let playlistId = '';
     let songUris = '';
 
+    // to handle this error later
+    if (playlist.length === 0) {
+      console.log('there are no songs!');
+      return;
+    }
+
     // console.log(userId);
     createPlaylist(accessToken, userId)
       .then(response => {
         playlistId = response.id;
         console.log(playlistId);
-
-        // to handle this error later
-        if (playlist.length === 0) {
-          console.log('there are no songs!');
-          return;
-        }
 
         for (const song of playlist) {
           songUris += song.uri;
@@ -68,10 +68,12 @@ const Play = () => {
         return response.json();
       })
       .then(data => {
-        setPlaylistData(data);
+        setPlaylistData(data.external_urls.spotify);
+        // console.log(data);
       });
 
     setShowModal(true);
+    dispatch(playlistActions.clearPlaylist());
   };
 
   const modalToggleHandler = () => {
@@ -102,7 +104,12 @@ const Play = () => {
         buttonText='Create Playlist'
       />
       <div className='create__container'>
-        {showModal && <CreatedModal onClose={modalToggleHandler} />}
+        {showModal && (
+          <CreatedModal
+            onClose={modalToggleHandler}
+            playlistLink={playlistData}
+          />
+        )}
         {playlist.length === 0 && emptyPlaylist()}
         {playlist.length > 0 && (
           <Fragment>

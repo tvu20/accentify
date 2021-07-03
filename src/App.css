@@ -66,6 +66,10 @@
   color: #24282e;
 }
 
+.btn--white {
+  background: white;
+}
+
 .page {
   margin-left: 80px;
   background-color: #18181a;

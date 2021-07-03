@@ -33,3 +33,28 @@ h3.create-empty {
   margin-left: 10px;
   font-size: 20px;
 }
+
+.created-modal__text,
+.created-modal__title {
+  color: white;
+  margin: 0;
+}
+
+.created-modal__title {
+  margin-bottom: 20px;
+}
+
+.created-modal__text {
+  padding: 0 100px;
+  margin-bottom: 20px;
+}
+
+.created-modal__buttons {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 20px;
+}
+
+.created-modal__img {
+  width: 150px;
+}
