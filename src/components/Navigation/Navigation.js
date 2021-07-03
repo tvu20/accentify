@@ -5,7 +5,7 @@ import icons from '../../assets/icons';
 
 import './nav.css';
 
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navigation = () => {
   // new
@@ -34,32 +34,52 @@ const Navigation = () => {
     <div className='nav-bar'>
       <div className='nav__container'>
         {/* <Link to='/home'>Home page</Link> */}
-        <Link className='nav__icon nav__tracks' to='/top-tracks'>
+        <NavLink
+          className='nav__icon nav__tracks'
+          to='/top-tracks'
+          activeClassName='nav__active'
+        >
           <img src={icons.tracks} alt='top tracks' />
-        </Link>
-        <Link className='nav__icon nav__artists' to='/top-artists'>
+        </NavLink>
+        <NavLink
+          className='nav__icon nav__artists'
+          to='/top-artists'
+          activeClassName='nav__active'
+        >
           <img src={icons.artists} alt='top artists' />
-        </Link>
-        <Link className='nav__icon nav__recent' to='/recently-played'>
+        </NavLink>
+        <NavLink
+          className='nav__icon nav__recent'
+          to='/recently-played'
+          activeClassName='nav__active'
+        >
           <img src={icons.recent} alt='recently played' />
-        </Link>
-        <Link className='nav__icon nav__trends' to='/trends'>
+        </NavLink>
+        <NavLink
+          className='nav__icon nav__trends'
+          to='/trends'
+          activeClassName='nav__active'
+        >
           <img src={icons.trends} alt='trends' />
-        </Link>
-        <Link className='nav__icon nav__create' to='/create'>
+        </NavLink>
+        <NavLink
+          className='nav__icon nav__create'
+          to='/create'
+          activeClassName='nav__active'
+        >
           <img src={icons.create} alt='create' />
           {numSongs > 0 && (
             <div className={badgeClasses}>
               {numSongs > 99 ? '99+' : numSongs}
             </div>
           )}
-        </Link>
+        </NavLink>
         {/* <Link className='nav__icon nav__create' to='/create'>
         {renderBadge()}
         <img src={icons.create} alt='create' />
       </Link> */}
       </div>
-      <Link className='nav__icon' to='/banner'>
+      <Link className='nav__icon nav__logo' to='/banner'>
         <img src={icons.logo} alt='logo' />
       </Link>
     </div>

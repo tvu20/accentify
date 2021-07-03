@@ -25,7 +25,7 @@ const TrackItem = props => {
   );
 
   return (
-    <div className='track-item'>
+    <div className='track-item fade-in-image'>
       <div className='track-item__left' onClick={onClickHandler}>
         <img
           className='track-item__image'

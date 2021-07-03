@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import TrackItem from './TrackItem';
+import LoadingSpinner from '../UI/LoadingSpinner';
 
 import './tracks.css';
 
@@ -31,7 +32,11 @@ const Tracklist = props => {
 
   return (
     <Fragment>
-      {tracklist.length === 0 && <div className='tracks__container-empty' />}
+      {tracklist.length === 0 && (
+        <div className='tracks__container-empty'>
+          <LoadingSpinner />
+        </div>
+      )}
       {tracklist.length > 0 && (
         <div className='tracks__container'>{renderTracks()}</div>
       )}

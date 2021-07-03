@@ -7,6 +7,9 @@
 
 .tracks__container-empty {
   height: 35vh;
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
 }
 
 .track-item {
