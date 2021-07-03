@@ -36,3 +36,21 @@ h5.about {
   justify-content: center;
   padding-bottom: 90px;
 }
+
+@media (max-width: 675px) {
+  .about__text {
+    padding: 0 70px;
+    text-align: center;
+  }
+
+  h1.about {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .about__text {
+    padding: 0 30px;
+  }
+}

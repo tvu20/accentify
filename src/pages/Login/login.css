@@ -73,3 +73,45 @@ h2.login {
   font-weight: 700;
   margin-top: 7px;
 }
+
+@media (max-width: 675px) {
+  .login__header-text {
+    /* padding-top: 100px; */
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
+  }
+
+  .login__footer {
+    padding-left: 50px;
+  }
+}
+
+h1.login {
+  font-size: 50px;
+}
+
+h2.login {
+  font-size: 18px;
+}
+
+.login__btn {
+  font-size: 14px;
+}
+.login.fa-spotify {
+  font-size: 20px;
+}
+
+.login__account {
+  margin-left: 20px;
+}
+
+.login__about-link {
+  font-size: 12px;
+}
+
+@media (max-width: 320px) {
+  .login-container {
+    width: 340px;
+  }
+}
