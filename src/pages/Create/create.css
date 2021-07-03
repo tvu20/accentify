@@ -72,6 +72,10 @@ h3.create-empty {
     font-size: 14px;
   }
 
+  .create__container {
+    min-height: 41vh;
+  }
+
   .create__button {
     font-size: 14px;
     margin-top: -70px;
