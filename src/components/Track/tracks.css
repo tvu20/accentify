@@ -19,6 +19,12 @@
   padding-right: 25px;
   display: flex;
   justify-content: space-between;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+
+.track-item:hover {
+  transform: scale(1.01);
 }
 
 .track-item__image {
@@ -75,7 +81,12 @@
 
 .track-item__right h4 {
   color: #68d5dc;
-  /* font-size: 40px; */
   margin: 0;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.track-item__right h4:hover {
+  color: #8ef7ff;
+  transform: scale(1.1);
 }

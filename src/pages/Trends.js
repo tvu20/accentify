@@ -40,7 +40,6 @@ const Trends = () => {
         showButton={false}
       />
       <Attributes />
-
       <Recommendations refresh={refreshRecsHandler} />
     </div>
   );

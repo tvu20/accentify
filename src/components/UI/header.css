@@ -58,6 +58,10 @@
   cursor: pointer;
 }
 
+.header__selector:hover {
+  color: white;
+}
+
 .header__selector.active {
   color: white;
   font-weight: 700;

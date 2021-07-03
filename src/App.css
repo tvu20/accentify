@@ -59,6 +59,7 @@
   border-radius: 50px;
   font-size: 18px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn a {
@@ -68,6 +69,10 @@
 
 .btn--white {
   background: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 .page {
