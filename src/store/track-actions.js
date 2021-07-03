@@ -1,11 +1,13 @@
 import { trackActions } from './tracks';
 
+import NUM_FETCHED from '../constants/num-fetched';
+
 // need to receive access token as a payload
 export const fetchTrackData = accessToken => {
   return async dispatch => {
     const fetchData = async timePeriod => {
       const response = await fetch(
-        `https://api.spotify.com/v1/me/top/tracks?time_range=${timePeriod}`,
+        `https://api.spotify.com/v1/me/top/tracks?time_range=${timePeriod}&limit=${NUM_FETCHED}`,
         {
           headers: {
             Authorization: 'Bearer ' + accessToken,
@@ -44,7 +46,7 @@ export const fetchArtistData = accessToken => {
   return async dispatch => {
     const fetchData = async timePeriod => {
       const response = await fetch(
-        `https://api.spotify.com/v1/me/top/artists?time_range=${timePeriod}`,
+        `https://api.spotify.com/v1/me/top/artists?time_range=${timePeriod}&limit=${NUM_FETCHED}`,
         {
           headers: {
             Authorization: 'Bearer ' + accessToken,
@@ -83,7 +85,7 @@ export const fetchRecentData = accessToken => {
   return async dispatch => {
     const fetchData = async () => {
       const response = await fetch(
-        'https://api.spotify.com/v1/me/player/recently-played',
+        `https://api.spotify.com/v1/me/player/recently-played?limit=${NUM_FETCHED}`,
         {
           headers: {
             Authorization: 'Bearer ' + accessToken,

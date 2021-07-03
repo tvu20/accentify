@@ -1,3 +1,3 @@
-const NUM_FETCHED = 20;
+const NUM_FETCHED = 50;
 
 export default NUM_FETCHED;

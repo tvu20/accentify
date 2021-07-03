@@ -52,7 +52,7 @@
 
 .artist-item {
   background-color: black;
-  width: 200px;
+  /* width: 250px; */
   /* border: 1px solid black; */
   padding: 12px;
   /* cursor: pointer; */
@@ -73,6 +73,8 @@
   width: 200px;
   height: 200px;
   border-radius: 10px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .artist-item:hover {
@@ -87,6 +89,7 @@
   margin-left: 15px;
   margin-top: 20px;
   text-align: left;
+  width: 180px;
 }
 
 .artist-item__meta h3,

@@ -105,7 +105,7 @@ export const fetchRecs = (accessToken, topTracks) => {
       let i = 0;
 
       // 20 will be replaced.
-      while (i < 20) {
+      while (i < NUM_FETCHED) {
         const fetched = await fetchData(i);
         for (const track of fetched.tracks) {
           dataFetched.push(track);

@@ -68,12 +68,10 @@ const Navigation = () => {
           activeClassName='nav__active'
         >
           <img src={icons.create} alt='create' />
-          {numSongs > 0 && (
-            <div className={badgeClasses}>
-              {numSongs > 99 ? '99+' : numSongs}
-            </div>
-          )}
         </NavLink>
+        {numSongs > 0 && (
+          <div className={badgeClasses}>{numSongs > 99 ? '99+' : numSongs}</div>
+        )}
         {/* <Link className='nav__icon nav__create' to='/create'>
         {renderBadge()}
         <img src={icons.create} alt='create' />
