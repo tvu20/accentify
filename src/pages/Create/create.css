@@ -60,12 +60,17 @@ h3.create-empty {
 }
 
 @media (max-width: 800px) {
+  h2.create-empty {
+    font-size: 20px;
+  }
+
+  h3.create-empty {
+    font-size: 14px;
+  }
+
   .create__button {
     font-size: 14px;
     background: linear-gradient(rgb(253, 248, 174), rgba(253, 248, 174, 0.8));
     margin-top: -70px;
-    /* display: flex;
-    align-items: center;
-    margin-bottom: 70px; */
   }
 }

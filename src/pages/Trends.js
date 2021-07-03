@@ -5,7 +5,7 @@ import { fetchTrends, fetchRecs } from '../store/trend-actions';
 
 import Header from '../components/UI/Header';
 import Attributes from '../components/Trends/Attributes';
-import Recommendations from '../components/Recommendations';
+import Recommendations from '../components/Trends/Recommendations';
 
 let generated = false;
 

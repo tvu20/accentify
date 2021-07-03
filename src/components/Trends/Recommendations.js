@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import Tracklist from './Track/Tracklist';
+import Tracklist from '../Track/Tracklist';
 
-import { playlistActions } from '../store/playlist';
+import { playlistActions } from '../../store/playlist';
 
 const Recommendations = props => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Recommendations = props => {
     <div>
       <div className='attribute-recs__header'>
         <h2 className='attribute__title'>Recommendations</h2>
-        <button className='btn' onClick={addAllToPlaylist}>
+        <button className='btn attribute__btn' onClick={addAllToPlaylist}>
           Add all to playlist
         </button>
       </div>

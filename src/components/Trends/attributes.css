@@ -51,3 +51,42 @@
   align-items: center;
   margin-right: 70px;
 }
+
+@media (max-width: 1000px) {
+  .attribute-item {
+    flex: 0 47%;
+  }
+}
+
+@media (max-width: 800px) {
+  .attribute__title {
+    font-size: 22px;
+    margin-left: 30px;
+  }
+
+  .attribute__container {
+    margin: 0 30px;
+  }
+
+  .attribute-item__header h3 {
+    font-size: 20px;
+  }
+
+  .attribute-item__desc {
+    font-size: 14px;
+  }
+
+  .attribute__btn {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .attribute__container {
+    flex-direction: column;
+  }
+
+  .attribute-item {
+    flex: 1;
+  }
+}

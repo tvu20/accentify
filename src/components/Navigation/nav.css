@@ -91,7 +91,8 @@
   .nav__container {
     width: 100vw;
     flex-direction: row;
-    padding: 0 20px;
+    /* padding: 0 20px; */
+    padding: 0 10vw;
     justify-content: space-between;
     align-items: center;
   }
@@ -107,5 +108,11 @@
   .nav__logo,
   .badge {
     display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav__container {
+    padding: 0 20px;
   }
 }
