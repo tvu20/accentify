@@ -18,8 +18,8 @@ const Play = () => {
   const [showModal, setShowModal] = useState(false);
   const [playlistData, setPlaylistData] = useState();
 
-  const accessToken = useSelector(state => state.auth.accessToken);
-  const userId = useSelector(state => state.auth.userId);
+  const accessToken = localStorage.getItem('accessToken');
+  const userId = localStorage.getItem('userId');
   const playlist = useSelector(state => state.playlist.tracklist);
 
   const removeFromPlaylist = track => {

@@ -1,11 +1,6 @@
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-import { authActions } from '../store/auth';
-import { fetchUserId } from '../store/auth-actions';
-
 const Callback = () => {
-  const dispatch = useDispatch();
   const history = useHistory();
 
   // handling token generation
@@ -19,9 +14,28 @@ const Callback = () => {
     }
 
     const accessToken = urlParts[urlParts.length - 1];
-    dispatch(authActions.setAccessToken(accessToken));
-    dispatch(authActions.setIsLoggedIn());
-    dispatch(fetchUserId(accessToken));
+
+    localStorage.setItem('accessToken', accessToken);
+    localStorage.setItem('isLoggedIn', true);
+
+    fetch(`https://api.spotify.com/v1/me`, {
+      headers: {
+        Authorization: 'Bearer ' + accessToken,
+      },
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Fetching user info failed.');
+        }
+
+        return response.json();
+      })
+      .then(data => {
+        localStorage.setItem('userId', data.id);
+      })
+      .catch(error => {
+        console.log(error);
+      });
 
     console.log('login success');
 

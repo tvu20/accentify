@@ -13,16 +13,14 @@ import {
 
 const DataFetcher = props => {
   const dispatch = useDispatch();
-  const accessToken = useSelector(state => state.auth.accessToken);
+  const accessToken = localStorage.getItem('accessToken');
   const history = useHistory();
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
-  if (!isLoggedIn) {
+  if (!localStorage.getItem('isLoggedIn')) {
     history.replace('/login');
   }
 
   useEffect(() => {
-    // console.log(' in a route!');
     dispatch(fetchTrackData(accessToken));
     dispatch(fetchArtistData(accessToken));
     dispatch(fetchRecentData(accessToken));

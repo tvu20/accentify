@@ -3,6 +3,7 @@
 // tracks and artists pages: user-top-read
 // create page: playlist-modify-public
 
+import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import './login.css';
@@ -14,6 +15,11 @@ const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4
 }`;
 
 const Login = () => {
+  const history = useHistory();
+  if (localStorage.getItem('isLoggedIn')) {
+    history.replace('/top-tracks');
+  }
+
   const loginHandler = () => {
     window.location.href = AUTH_URL;
   };

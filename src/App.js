@@ -19,7 +19,11 @@ function App() {
     <div className='App'>
       <Switch>
         <Route path='/' exact>
-          <Redirect to='/login' />
+          {localStorage.getItem('isLoggedIn') ? (
+            <Redirect to='/top-tracks' />
+          ) : (
+            <Redirect to='/login' />
+          )}
         </Route>
 
         <Route path='/login' component={Login} />

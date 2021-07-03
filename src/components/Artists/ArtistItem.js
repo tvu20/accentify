@@ -4,8 +4,6 @@ import icons from '../../assets/icons';
 const ArtistItem = props => {
   const { artist } = props;
 
-  console.log(artist);
-
   const onClickHandler = () => {
     window.open(artist.external_urls.spotify, '_blank');
     // window.location.href = artist.external_urls.spotify;
