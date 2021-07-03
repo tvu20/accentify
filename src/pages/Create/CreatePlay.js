@@ -122,7 +122,10 @@ const Play = () => {
               actionButtonText='Create Playlist'
             />
             <div className='create__button-container'>
-              <button className='btn create__button' onClick={clearPlaylist}>
+              <button
+                className='btn create__button btn--alt'
+                onClick={clearPlaylist}
+              >
                 Clear playlist
                 <i className='fa fa-trash'></i>
               </button>

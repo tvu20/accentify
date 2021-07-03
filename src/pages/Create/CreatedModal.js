@@ -24,14 +24,10 @@ const CreatedModal = props => {
       <p className='created-modal__text'>Happy listening!</p>
 
       <div className='created-modal__buttons'>
-        <button
-          className='btn'
-          style={{ marginRight: '20px' }}
-          onClick={redirectHandler}
-        >
+        <button className='btn' onClick={redirectHandler}>
           Open Playlist
         </button>
-        <button className='btn btn--white' onClick={props.onClose}>
+        <button className='btn btn--alt' onClick={props.onClose}>
           Return
         </button>
       </div>

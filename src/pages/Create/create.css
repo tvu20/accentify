@@ -55,6 +55,10 @@ h3.create-empty {
   margin: 30px 0 20px;
 }
 
+.created-modal__buttons .btn {
+  margin: 0 10px;
+}
+
 .created-modal__img {
   width: 150px;
 }
@@ -70,7 +74,24 @@ h3.create-empty {
 
   .create__button {
     font-size: 14px;
-    background: linear-gradient(rgb(253, 248, 174), rgba(253, 248, 174, 0.8));
     margin-top: -70px;
+  }
+
+  .created-modal__text {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .created-modal__buttons {
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    margin: 30px 0 10px;
+  }
+
+  .created-modal__buttons .btn {
+    font-size: 14px;
+    padding: 7px 25px;
+    margin-bottom: 10px;
   }
 }

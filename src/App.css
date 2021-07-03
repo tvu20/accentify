@@ -71,6 +71,10 @@
   background: white;
 }
 
+.btn--alt {
+  background: linear-gradient(rgb(253, 248, 174), rgba(253, 248, 174, 0.8));
+}
+
 .btn:hover {
   transform: scale(1.05);
 }
