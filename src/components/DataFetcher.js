@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router';
 
@@ -13,10 +13,11 @@ import {
 
 const DataFetcher = props => {
   const dispatch = useDispatch();
-  const accessToken = localStorage.getItem('accessToken');
+  const accessToken = useSelector(state => state.auth.accessToken);
   const history = useHistory();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
-  if (!localStorage.getItem('isLoggedIn')) {
+  if (!isLoggedIn) {
     history.replace('/login');
   }
 

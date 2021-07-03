@@ -14,7 +14,7 @@ const DESC =
 
 const Trends = () => {
   const dispatch = useDispatch();
-  const accessToken = localStorage.getItem('accessToken');
+  const accessToken = useSelector(state => state.auth.accessToken);
   const topTracks = useSelector(state => state.tracks.top_tracks);
 
   useEffect(() => {
