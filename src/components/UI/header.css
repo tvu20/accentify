@@ -67,3 +67,47 @@
   font-weight: 700;
   border-bottom: 3px solid #68d5dc;
 }
+
+@media (max-width: 800px) {
+  .header {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .header--recent {
+    height: 40vh;
+  }
+
+  .header-one__right {
+    display: none;
+  }
+
+  .header-one__left {
+    padding: 0px 30px;
+  }
+
+  .header__title {
+    /* color: white; */
+    /* font-weight: 700; */
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .header__desc {
+    color: #dfdfdf;
+    width: auto;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .header__select-container {
+    padding-left: 30px;
+  }
+
+  .header__selector {
+    font-size: 14px;
+    color: #dfdfdf;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}

@@ -54,7 +54,7 @@ const Header = props => {
 
   return (
     <header
-      className='header'
+      className={`header ${props.image === 'recents' ? 'header--recent' : ''}`}
       style={{
         backgroundImage: `linear-gradient(
             to bottom,
