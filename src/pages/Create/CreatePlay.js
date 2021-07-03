@@ -1,6 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import CreatedModal from './CreatedModal';
 import Header from '../../components/UI/Header';
 import Tracklist from '../../components/Track/Tracklist';
 
@@ -14,6 +15,9 @@ const DESC =
 
 const Play = () => {
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(true);
+  const [playlistData, setPlaylistData] = useState();
+
   const accessToken = useSelector(state => state.auth.accessToken);
   const userId = useSelector(state => state.auth.userId);
   const playlist = useSelector(state => state.playlist.tracklist);
@@ -31,23 +35,48 @@ const Play = () => {
     let songUris = '';
 
     // console.log(userId);
-    createPlaylist(accessToken, userId).then(response => {
-      playlistId = response.id;
-      console.log(playlistId);
+    createPlaylist(accessToken, userId)
+      .then(response => {
+        playlistId = response.id;
+        console.log(playlistId);
 
-      // to handle this error later
-      if (playlist.length === 0) {
-        console.log('there are no songs!');
-        return;
-      }
+        // to handle this error later
+        if (playlist.length === 0) {
+          console.log('there are no songs!');
+          return;
+        }
 
-      for (const song of playlist) {
-        songUris += song.uri;
-        songUris += ',';
-      }
+        for (const song of playlist) {
+          songUris += song.uri;
+          songUris += ',';
+        }
 
-      populatePlaylist(accessToken, playlistId, songUris);
-    });
+        populatePlaylist(accessToken, playlistId, songUris);
+      })
+      .then(() => {
+        return fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+          headers: {
+            Authorization: 'Bearer ' + accessToken,
+          },
+        });
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Fetching track info failed.');
+        }
+
+        return response.json();
+      })
+      .then(data => {
+        setPlaylistData(data);
+      });
+
+    setShowModal(true);
+  };
+
+  const modalToggleHandler = () => {
+    setShowModal(prevState => !prevState);
+    setPlaylistData(null);
   };
 
   const emptyPlaylist = () => {
@@ -73,6 +102,7 @@ const Play = () => {
         buttonText='Create Playlist'
       />
       <div className='create__container'>
+        {showModal && <CreatedModal onClose={modalToggleHandler} />}
         {playlist.length === 0 && emptyPlaylist()}
         {playlist.length > 0 && (
           <Fragment>
