@@ -118,6 +118,8 @@ const Play = () => {
               tracklist={playlist}
               onClick={removeFromPlaylist}
               remove={true}
+              actionButton={createPlaylistHandler}
+              actionButtonText='Create Playlist'
             />
             <div className='create__button-container'>
               <button className='btn create__button' onClick={clearPlaylist}>

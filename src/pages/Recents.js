@@ -39,7 +39,6 @@ const Recents = () => {
         recent={true}
         actionButton={addAllToPlaylist}
       />
-      {/* <button onClick={addAllToPlaylist}>Add all to playlist</button> */}
     </div>
   );
 };

@@ -41,7 +41,7 @@ const Tracklist = props => {
         <div className='tracks__container'>{renderTracks()}</div>
       )}
       <button className='btn tracks__btn-mobile' onClick={actionButton}>
-        Add all to Playlist
+        {props.actionButtonText ? 'Create Playlist ' : 'Add all to Playlist'}
       </button>
     </Fragment>
   );
