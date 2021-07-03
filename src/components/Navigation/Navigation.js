@@ -5,15 +5,20 @@ import icons from '../../assets/icons';
 
 import './nav.css';
 
+import { useHistory } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navigation = () => {
-  // new
+  const history = useHistory();
   const [badgeHighlighted, setBadgeHighlight] = useState(false);
 
   const numSongs = useSelector(state => state.playlist.count);
 
   const badgeClasses = `badge ${badgeHighlighted ? 'bump' : ''}`;
+
+  const sendToCreate = () => {
+    history.push('/create');
+  };
 
   useEffect(() => {
     if (numSongs === 0) {
@@ -70,7 +75,9 @@ const Navigation = () => {
           <img src={icons.create} alt='create' />
         </NavLink>
         {numSongs > 0 && (
-          <div className={badgeClasses}>{numSongs > 99 ? '99+' : numSongs}</div>
+          <div className={badgeClasses} onClick={sendToCreate}>
+            {numSongs > 99 ? '99+' : numSongs}
+          </div>
         )}
         {/* <Link className='nav__icon nav__create' to='/create'>
         {renderBadge()}
