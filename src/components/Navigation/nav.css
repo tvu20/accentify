@@ -77,3 +77,35 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 800px) {
+  .nav-bar {
+    height: 60px;
+    top: auto;
+    bottom: 0;
+    width: 100vw;
+    flex-direction: row;
+    z-index: 100;
+  }
+
+  .nav__container {
+    width: 100vw;
+    flex-direction: row;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__icon {
+    padding-bottom: 0px;
+  }
+
+  .nav__icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav__logo,
+  .badge {
+    display: none;
+  }
+}
