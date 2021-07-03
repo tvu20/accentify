@@ -12,7 +12,7 @@ const SHOW_DIALOGUE = false;
 
 const currentLocation = window.location.href.split('/login')[0];
 
-const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4473ae8174c711753368&response_type=token&redirect_uri=${currentLocation}/callback&scope=user-read-recently-played&20user-top-read&20playlist-modify-public${
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4473ae8174c711753368&response_type=token&redirect_uri=${currentLocation}callback&scope=user-read-recently-played&20user-top-read&20playlist-modify-public${
   SHOW_DIALOGUE ? '&show_dialog=true' : ''
 }`;
 
