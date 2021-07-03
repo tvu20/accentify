@@ -36,7 +36,7 @@ const About = () => {
         </p>
       </div>
       <div className='about__return-button'>
-        <button class='btn ' onClick={returnHandler}>
+        <button className='btn ' onClick={returnHandler}>
           Return
         </button>
       </div>
