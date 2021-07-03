@@ -72,6 +72,7 @@
   .header {
     width: 100vw;
     height: 50vh;
+    margin-bottom: 30px;
   }
 
   .header--recent {

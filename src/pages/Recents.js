@@ -33,7 +33,12 @@ const Recents = () => {
         buttonText='Add all to playlist'
       />
 
-      <Tracklist tracklist={recents} onClick={addToPlaylist} recent={true} />
+      <Tracklist
+        tracklist={recents}
+        onClick={addToPlaylist}
+        recent={true}
+        actionButton={addAllToPlaylist}
+      />
       {/* <button onClick={addAllToPlaylist}>Add all to playlist</button> */}
     </div>
   );

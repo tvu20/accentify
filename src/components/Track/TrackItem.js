@@ -1,5 +1,14 @@
+import icons from '../../assets/icons';
+
 const TrackItem = props => {
   const { track, onClick } = props;
+
+  const imageUrl = () => {
+    if (track.album.images.length !== 0) {
+      return track.album.images[0].url;
+    }
+    return icons.blank;
+  };
 
   const calcDuration = ms => {
     ms /= 1000;
@@ -21,7 +30,7 @@ const TrackItem = props => {
       <i className='fa fa-trash'></i>
     </h4>
   ) : (
-    <h4 style={{ fontSize: '40px' }}>+</h4>
+    <h4 style={{ fontSize: '35px' }}>+</h4>
   );
 
   return (
@@ -29,7 +38,7 @@ const TrackItem = props => {
       <div className='track-item__left' onClick={onClickHandler}>
         <img
           className='track-item__image'
-          src={track.album.images[0].url}
+          src={imageUrl()}
           alt={track.album.name}
         />
         <section className='track-item__meta'>
@@ -38,7 +47,7 @@ const TrackItem = props => {
         </section>
       </div>
       <div className='track-item__right' onClick={onAddHandler}>
-        <p>
+        <p className='track-item__time'>
           {duration[0]}:{duration[1] < 9 ? `0${duration[1]}` : duration[1]}
         </p>
         {icon}

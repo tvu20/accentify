@@ -48,7 +48,11 @@ const Tracks = () => {
         buttonText='Add all to playlist'
         setTime={timePeriodHandler}
       />
-      <Tracklist tracklist={trackDisplay()} onClick={addToPlaylist} />
+      <Tracklist
+        tracklist={trackDisplay()}
+        onClick={addToPlaylist}
+        actionButton={addAllToPlaylist}
+      />
     </div>
   );
 };

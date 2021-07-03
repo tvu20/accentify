@@ -26,7 +26,11 @@ const Recommendations = props => {
           Add all to playlist
         </button>
       </div>
-      <Tracklist tracklist={trends.rec_list} onClick={addToPlaylist} />
+      <Tracklist
+        tracklist={trends.rec_list}
+        onClick={addToPlaylist}
+        actionButton={addAllToPlaylist}
+      />
       {/* <button className='btn' onClick={props.refresh}>
         Refresh recommendations
       </button> */}

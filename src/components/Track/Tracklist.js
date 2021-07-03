@@ -5,7 +5,7 @@ import LoadingSpinner from '../UI/LoadingSpinner';
 import './tracks.css';
 
 const Tracklist = props => {
-  const { tracklist, onClick, recent, remove } = props;
+  const { tracklist, onClick, recent, remove, actionButton } = props;
 
   const renderTracks = () => {
     if (recent) {
@@ -40,6 +40,9 @@ const Tracklist = props => {
       {tracklist.length > 0 && (
         <div className='tracks__container'>{renderTracks()}</div>
       )}
+      <button className='btn tracks__btn-mobile' onClick={actionButton}>
+        Add all to Playlist
+      </button>
     </Fragment>
   );
 };

@@ -5,6 +5,10 @@
   /* background-color: gray; */
 }
 
+.tracks__btn-mobile {
+  display: none;
+}
+
 .tracks__container-empty {
   height: 35vh;
   margin-top: 7rem;
@@ -92,4 +96,52 @@
 .track-item__right h4:hover {
   color: #8ef7ff;
   transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+  .tracks__container {
+    padding: 0 20px 30px;
+    /* background-color: gray; */
+  }
+
+  .track-item {
+    /* border: 1px solid black; */
+    padding: 10px;
+    /* cursor: pointer; */
+    /* border-radius: 10px; */
+    margin-bottom: 10px;
+    padding-right: 15px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* text-align: left; */
+    /* transition: all 0.2s ease-in-out; */
+  }
+
+  .track-item__image {
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
+  }
+
+  .track-item__time {
+    display: none;
+  }
+
+  .track-item__meta {
+    margin-left: 15px;
+  }
+
+  .track-item__meta h3 {
+    font-size: 16px;
+  }
+
+  .track-item__meta p {
+    font-size: 14px;
+  }
+
+  .tracks__btn-mobile {
+    display: initial;
+    margin-bottom: 90px;
+    font-size: 14px;
+  }
 }
