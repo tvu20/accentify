@@ -10,7 +10,9 @@ import './login.css';
 
 const SHOW_DIALOGUE = false;
 
-const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4473ae8174c711753368&response_type=token&redirect_uri=http://localhost:3000/callback&scope=user-read-recently-played&20user-top-read&20playlist-modify-public${
+const currentLocation = window.location.href.split('/login')[0];
+
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4473ae8174c711753368&response_type=token&redirect_uri=${currentLocation}/callback&scope=user-read-recently-played&20user-top-read&20playlist-modify-public${
   SHOW_DIALOGUE ? '&show_dialog=true' : ''
 }`;
 
@@ -19,6 +21,8 @@ const Login = () => {
   if (localStorage.getItem('isLoggedIn')) {
     history.replace('/top-tracks');
   }
+
+  console.log(currentLocation);
 
   const loginHandler = () => {
     window.location.href = AUTH_URL;
