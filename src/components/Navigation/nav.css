@@ -33,12 +33,12 @@
   z-index: 10;
   background-color: #68d5dc;
   color: #1d2228;
-  border: none;
+  border: 3px solid #1d2228;
   border-radius: 7.5px;
   margin-left: 40px;
-  margin-top: -25px;
-  padding: 3px 2px;
-  max-width: 20px;
+  margin-top: -22px;
+  padding: 2px 2px;
+  width: 16px;
   font-weight: bold;
   font-size: 12px;
 }

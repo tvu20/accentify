@@ -19,7 +19,7 @@ const Play = () => {
   const playlist = useSelector(state => state.playlist.tracklist);
 
   const removeFromPlaylist = track => {
-    dispatch(playlistActions.removeTrack(track.id));
+    dispatch(playlistActions.removeTrack(track.playlist_id));
   };
 
   const clearPlaylist = () => {

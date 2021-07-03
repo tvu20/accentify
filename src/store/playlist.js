@@ -10,13 +10,15 @@ const playlistSlice = createSlice({
   initialState: initState,
   reducers: {
     addTrack(state, action) {
+      const pId = { playlist_id: state.count };
+      const newTrack = { ...action.payload, ...pId };
+
       state.count += 1;
-      state.tracklist.push(action.payload);
+      state.tracklist.push(newTrack);
     },
     removeTrack(state, action) {
-      //   state.count -= 1;
       const newPlaylist = state.tracklist.filter(
-        track => track.id !== action.payload
+        track => track.playlist_id !== action.payload
       );
 
       if (newPlaylist.length !== state.tracklist.length) {

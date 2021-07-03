@@ -13,7 +13,7 @@ const Navigation = () => {
 
   const numSongs = useSelector(state => state.playlist.count);
 
-  const badgeClasses = `nav__create ${badgeHighlighted ? 'bump' : ''}`;
+  const badgeClasses = `badge ${badgeHighlighted ? 'bump' : ''}`;
 
   useEffect(() => {
     if (numSongs === 0) {
@@ -46,10 +46,12 @@ const Navigation = () => {
         <Link className='nav__icon nav__trends' to='/trends'>
           <img src={icons.trends} alt='trends' />
         </Link>
-        <Link className={badgeClasses} to='/create'>
+        <Link className='nav__icon nav__create' to='/create'>
           <img src={icons.create} alt='create' />
           {numSongs > 0 && (
-            <div className='badge'>{numSongs > 99 ? '99+' : numSongs}</div>
+            <div className={badgeClasses}>
+              {numSongs > 99 ? '99+' : numSongs}
+            </div>
           )}
         </Link>
         {/* <Link className='nav__icon nav__create' to='/create'>
