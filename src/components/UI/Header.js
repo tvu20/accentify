@@ -34,6 +34,24 @@ const Header = props => {
     } else return 0.9;
   };
 
+  const renderButton = () => {
+    if (!props.showButton) return null;
+
+    if (props.buttonDisable) {
+      return (
+        <button onClick={props.onButtonClick} className='btn' disabled>
+          {props.buttonText}
+        </button>
+      );
+    }
+
+    return (
+      <button onClick={props.onButtonClick} className='btn'>
+        {props.buttonText}
+      </button>
+    );
+  };
+
   return (
     <header
       className='header'
@@ -53,11 +71,12 @@ const Header = props => {
           )}
         </div>
         <div className='header-one__right'>
-          {props.showButton && (
+          {renderButton()}
+          {/* {props.showButton && (
             <button onClick={props.onButtonClick} className='btn'>
               {props.buttonText}
             </button>
-          )}
+          )} */}
         </div>
       </div>
       {props.showTimes && (

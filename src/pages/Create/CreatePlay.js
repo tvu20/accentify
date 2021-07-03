@@ -100,6 +100,7 @@ const Play = () => {
         description={DESC}
         showTimes={false}
         showButton={true}
+        buttonDisable={playlist.length === 0}
         onButtonClick={createPlaylistHandler}
         buttonText='Create Playlist'
       />
