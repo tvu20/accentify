@@ -10,8 +10,10 @@ export const fetchUserId = (accessToken, topTracks) => {
         },
       });
 
+      console.log(response);
+
       if (!response.ok) {
-        throw new Error('Fetching track info failed.');
+        throw new Error('Fetching user id failed.');
       }
 
       const data = await response.json();
@@ -20,6 +22,7 @@ export const fetchUserId = (accessToken, topTracks) => {
 
     try {
       const user = await fetchData();
+      console.log(user);
       dispatch(authActions.setUserId(user.id));
     } catch {
       console.log('Error occured while fetching user id.');
