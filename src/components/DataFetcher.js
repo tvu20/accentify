@@ -23,8 +23,8 @@ const DataFetcher = props => {
 
   useEffect(() => {
     dispatch(fetchTrackData(accessToken));
-    dispatch(fetchArtistData(accessToken));
-    dispatch(fetchRecentData(accessToken));
+    // dispatch(fetchArtistData(accessToken));
+    // dispatch(fetchRecentData(accessToken));
   }, [dispatch, accessToken]);
 
   return (

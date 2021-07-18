@@ -15,8 +15,10 @@ export const fetchTrackData = accessToken => {
         }
       );
 
+      console.log(response);
+
       if (!response.ok) {
-        throw new Error('Fetching cart data failed.');
+        throw new Error('Fetching tracks failed.');
       }
 
       const data = await response.json();
@@ -35,8 +37,9 @@ export const fetchTrackData = accessToken => {
           topM: topM.items || [],
         })
       );
-    } catch {
+    } catch (error) {
       console.log('Error occured.');
+      console.log(error);
     }
   };
 };

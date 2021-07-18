@@ -8,14 +8,17 @@ import { Link } from 'react-router-dom';
 
 import './login.css';
 
-const SHOW_DIALOGUE = false;
+const SHOW_DIALOGUE = true;
 
-const currentLocation = 'http://accentify.herokuapp.com/';
+const currentLocation = 'http://localhost:3000/';
+// const currentLocation = 'http://accentify.herokuapp.com/';
 // const currentLocation = window.location.href.split('/login')[0];
 
-const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4473ae8174c711753368&response_type=token&redirect_uri=${currentLocation}callback&scope=user-read-recently-played&20user-top-read&20playlist-modify-public${
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=1dde19b907bc4473ae8174c711753368&response_type=token&redirect_uri=${currentLocation}callback&scope=user-read-private%20user-read-email${
   SHOW_DIALOGUE ? '&show_dialog=true' : ''
 }`;
+
+// &scope=user-read-recently-played&20user-top-read&20playlist-modify-public
 
 const Login = () => {
   // const history = useHistory();

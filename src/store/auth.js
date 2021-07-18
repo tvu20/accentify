@@ -17,7 +17,7 @@ const authSlice = createSlice({
       state.accessToken = action.payload;
     },
     setUserId(state, action) {
-      state.userId = 'tvu20';
+      state.userId = action.payload;
     },
   },
 });

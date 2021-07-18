@@ -10,6 +10,7 @@ const Callback = () => {
 
   // handling token generation
   const handleAccess = () => {
+    console.log('hit callback');
     const url = window.location.href;
     const urlParts = url.split('#access_token=');
 

@@ -22,7 +22,6 @@ export const fetchUserId = (accessToken, topTracks) => {
 
     try {
       const user = await fetchData();
-      console.log(user);
       dispatch(authActions.setUserId(user.id));
     } catch {
       console.log('Error occured while fetching user id.');
